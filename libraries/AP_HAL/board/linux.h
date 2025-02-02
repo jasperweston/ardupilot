@@ -337,7 +337,10 @@
     #endif
     #define HAL_BUZZER_PIN                12 // You can choose between 27,22,4,12
     #define OBAL_ALLOW_ADC                1
-
+#elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_LINUX_PLACEHOLDER
+    #define HAL_INS_PROBE_LIST PROBE_IMU_SPI(Invensense, "mpu9250", ROTATION_NONE)
+    #define HAL_BARO_PROBE_LIST PROBE_BARO_SPI(BMP280, "bmp280")
+    #define HAL_MAG_PROBE_LIST PROBE_MAG_IMU(AK8963, mpu9250, 0, ROTATION_NONE)
 #else
     #error "no Linux board subtype set"
 #endif

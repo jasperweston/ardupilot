@@ -1715,6 +1715,17 @@ class canzero(linux):
         env.DEFINES.update(
             CONFIG_HAL_BOARD_SUBTYPE = 'HAL_BOARD_SUBTYPE_LINUX_CANZERO',
         )
+
+class placeholder(linux):
+    toolchain = 'arm-linux-gnueabihf'
+
+    def configure_env(self, cfg, env):
+        super(placeholder, self).configure_env(cfg, env)
+
+        env.DEFINES.update(
+            CONFIG_HAL_BOARD_SUBTYPE='HAL_BOARD_SUBTYPE_LINUX_PLACEHOLDER',
+        )
+
         
 class SITL_static(sitl):
     def configure_env(self, cfg, env):

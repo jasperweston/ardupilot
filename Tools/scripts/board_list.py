@@ -75,7 +75,7 @@ class BoardList(object):
             Board("canzero"),
             Board("SITL_x86_64_linux_gnu"),
             Board("SITL_arm_linux_gnueabihf"),
-            Board("placeholder"),
+            Board("Placeholder"),
         ]
 
         for adir in os.listdir(self.hwdef_dir):
